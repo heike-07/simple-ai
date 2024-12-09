@@ -36,7 +36,7 @@ st.markdown("""
         padding: 10px;
         border-radius: 10px;
         margin: 10px 0;
-        max-width: 75%;
+        max-width: auto;
         word-wrap: break-word;
         text-align: right;
     }
@@ -46,7 +46,7 @@ st.markdown("""
         padding: 10px;
         border-radius: 10px;
         margin: 10px 0;
-        max-width: 75%;
+        max-width: auto;
         word-wrap: break-word;
         text-align: left;
     }
@@ -83,7 +83,7 @@ st.markdown("""
 
 # 显示历史对话
 with st.container():
-    st.markdown('<div class="chat-container">', unsafe_allow_html=True)
+    #st.markdown('<div class="chat-container">', unsafe_allow_html=True)
     # 显示消息
     for msg in st.session_state.messages:
         if msg["role"] == "user":
@@ -116,5 +116,5 @@ if st.button("提交") and user_input:
     st.rerun()
 
 # 防止页面被刷新时丢失内容
-if not user_input:
-    st.warning("请输入消息进行对话。")
+# if not user_input:
+#     st.warning("请输入消息进行对话。")
