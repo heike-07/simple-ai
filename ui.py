@@ -19,8 +19,13 @@ if "input" not in st.session_state:
     st.session_state.input = ""  # 初始化输入框内容
 
 # 设置页面标题
-st.set_page_config(page_title="与智谱AI模型聊天", page_icon="🤖", layout="wide")
-st.title("与智谱AI聊天")
+st.set_page_config(page_title="AI-@heike07", page_icon="🤖", layout="wide")
+st.title("与AI-@heike07聊天")
+st.markdown(
+    '<p style="color:gray;">作者(Author)：heike07 & GPT4o 项目源码：<a href="https://github.com/heike07/simple-ai" style="color:gray; text-decoration:none;">GitHub</a></p>',
+    unsafe_allow_html=True
+)
+
 
 # 自定义样式
 st.markdown("""
@@ -78,3 +83,8 @@ st.text_input(
     key="input",
     placeholder="在此输入消息，然后按回车发送..."
 )
+
+
+
+
+
