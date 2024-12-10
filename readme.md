@@ -50,8 +50,10 @@ source venv/bin/activate
 # 安装依赖
 pip install -r requirements.txt
 ```
+### 3. 输入自己的智谱AIkey
+在同级目录创建(GLM4-Flash.key)文件填入key
 
-### 3.启动应用
+### 4.启动应用
 
 ```bash
 streamlit run ui.py
