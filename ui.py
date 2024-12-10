@@ -22,7 +22,7 @@ if "input" not in st.session_state:
 st.set_page_config(page_title="AI-@heike07", page_icon="🤖", layout="wide")
 st.title("与AI-@heike07聊天")
 st.markdown(
-    '<p style="color:gray;">作者(Author)：heike07 & GPT4o 项目源码：<a href="https://github.com/heike07/simple-ai" style="color:gray; text-decoration:none;">GitHub</a></p>',
+    '<p style="color:gray;">作者(Author)：heike07 & GPT4o 项目源码：<a href="https://github.com/heike-07/simple-ai" style="color:gray; text-decoration:none;">GitHub</a></p>',
     unsafe_allow_html=True
 )
 
