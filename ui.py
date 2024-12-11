@@ -21,21 +21,16 @@ if "input" not in st.session_state:
 
 
 # 设置页面标题
-st.set_page_config(page_title="AI-@heike07", page_icon="🤖", layout="wide")
-st.title("AI-@heike07")
+st.set_page_config(page_title="AI @heike07", page_icon="🤖", layout="wide")
+st.title("AI @heike07")
 st.markdown(
-    '<p style="color:gray;">作者(Author)：heike07 & GPT4o 项目源码：<a href="https://github.com/heike-07/simple-ai" style="color:gray; text-decoration:none;">GitHub</a></p>',
+    '<p style="color:gray;">heike07 & GPT4o  源码：<a href="https://github.com/heike-07/simple-ai" style="color:gray; text-decoration:none;">GitHub</a></p>',
     unsafe_allow_html=True
 )
 
 # 自定义样式
 st.markdown("""
     <style>
-    body {
-        background-color: black;  /* 设置页面背景为黑色 */
-        color: white;  /* 设置字体颜色为白色 */
-    }
-
     .user-message {
         background: linear-gradient(135deg, #00c6ff, #0072ff);  /* 蓝色渐变 */
         padding: 15px;
@@ -96,5 +91,5 @@ st.text_input(
     value=st.session_state.input,
     on_change=on_submit,
     key="input",
-    placeholder="在此输入消息，然后按回车发送..."
+    placeholder="在此输入问题，然后按回车发送..."
 )
