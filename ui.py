@@ -18,9 +18,11 @@ if "messages" not in st.session_state:
 if "input" not in st.session_state:
     st.session_state.input = ""  # 初始化输入框内容
 
+
+
 # 设置页面标题
 st.set_page_config(page_title="AI-@heike07", page_icon="🤖", layout="wide")
-st.title("与AI-@heike07聊天")
+st.title("AI-@heike07")
 st.markdown(
     '<p style="color:gray;">作者(Author)：heike07 & GPT4o 项目源码：<a href="https://github.com/heike-07/simple-ai" style="color:gray; text-decoration:none;">GitHub</a></p>',
     unsafe_allow_html=True
@@ -29,26 +31,37 @@ st.markdown(
 # 自定义样式
 st.markdown("""
     <style>
+    body {
+        background-color: black;  /* 设置页面背景为黑色 */
+        color: white;  /* 设置字体颜色为白色 */
+    }
+
     .user-message {
-        background-color: #e1f7d5;  /* 绿色背景 */
-        padding: 10px;
-        border-radius: 10px;
-        margin: 10px 0;
-        width: auto;  /* 宽度根据内容自适应 */
-        word-wrap: break-word;  /* 自动换行 */
-        text-align: left;  /* 文字左对齐 */
-        display: inline-block;  /* 使框根据内容自动调整宽度 */
-        float: right;  /* 将框显示在右侧 */
+        background: linear-gradient(135deg, #00c6ff, #0072ff);  /* 蓝色渐变 */
+        padding: 15px;
+        border-radius: 20px;
+        margin: 12px 0;
+        width: auto;
+        word-wrap: break-word;
+        text-align: left;
+        display: inline-block;
+        float: right;
+        box-shadow: 0 8px 30px rgba(0, 114, 255, 0.3);  /* 强化阴影 */
+        color: white;
+        border: 2px solid rgba(0, 114, 255, 0.6);  /* 边框 */
     }
     .assistant-message {
-        background-color: #d3f4fe;  /* 蓝色背景 */
-        padding: 10px;
-        border-radius: 10px;
-        margin: 10px 0;
-        width: auto;  /* 宽度根据内容自适应 */
-        word-wrap: break-word;  /* 自动换行 */
-        text-align: left;  /* 左对齐 */
-        display: inline-block;  /* 使框根据内容自动调整宽度 */
+        background: linear-gradient(135deg, #00b09b, #96c93d);  /* 绿色渐变 */
+        padding: 15px;
+        border-radius: 20px;
+        margin: 12px 0;
+        width: auto;
+        word-wrap: break-word;
+        text-align: left;
+        display: inline-block;
+        box-shadow: 0 8px 30px rgba(0, 255, 123, 0.3);  /* 强化阴影 */
+        color: white;
+        border: 2px solid rgba(0, 255, 123, 0.6);  /* 边框 */
     }
     </style>
 """, unsafe_allow_html=True)
@@ -59,9 +72,6 @@ for msg in st.session_state.messages:
         st.markdown(f'<div class="user-message">{msg["content"]}</div>', unsafe_allow_html=True)
     else:
         st.markdown(f'<div class="assistant-message">{msg["content"]}</div>', unsafe_allow_html=True)
-
-
-
 
 # 提交逻辑
 def on_submit():
@@ -82,14 +92,9 @@ def on_submit():
 
 # 输入框和按钮
 st.text_input(
-    "请输入消息：",
+    "请向我提问：",
     value=st.session_state.input,
     on_change=on_submit,
     key="input",
     placeholder="在此输入消息，然后按回车发送..."
 )
-
-
-
-
-
