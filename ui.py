@@ -26,27 +26,29 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
 # 自定义样式
 st.markdown("""
     <style>
     .user-message {
-        background-color: #e1f7d5;
+        background-color: #e1f7d5;  /* 绿色背景 */
         padding: 10px;
         border-radius: 10px;
         margin: 10px 0;
-        max-width: auto;
-        word-wrap: break-word;
-        text-align: right;
+        width: auto;  /* 宽度根据内容自适应 */
+        word-wrap: break-word;  /* 自动换行 */
+        text-align: left;  /* 文字左对齐 */
+        display: inline-block;  /* 使框根据内容自动调整宽度 */
+        float: right;  /* 将框显示在右侧 */
     }
     .assistant-message {
-        background-color: #d3f4fe;
+        background-color: #d3f4fe;  /* 蓝色背景 */
         padding: 10px;
         border-radius: 10px;
         margin: 10px 0;
-        max-width: auto;
-        word-wrap: break-word;
-        text-align: left;
+        width: auto;  /* 宽度根据内容自适应 */
+        word-wrap: break-word;  /* 自动换行 */
+        text-align: left;  /* 左对齐 */
+        display: inline-block;  /* 使框根据内容自动调整宽度 */
     }
     </style>
 """, unsafe_allow_html=True)
@@ -57,6 +59,9 @@ for msg in st.session_state.messages:
         st.markdown(f'<div class="user-message">{msg["content"]}</div>', unsafe_allow_html=True)
     else:
         st.markdown(f'<div class="assistant-message">{msg["content"]}</div>', unsafe_allow_html=True)
+
+
+
 
 # 提交逻辑
 def on_submit():
